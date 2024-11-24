@@ -1,0 +1,215 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  
+  /* Game board container */
+  .cont {
+    display: grid;
+    width: 600px;
+    grid-template-columns: repeat(10, 1fr);
+    margin: 0;
+  }
+  
+  .cont div {
+    width: 60px;
+    height: 60px;
+    border: 0.2px solid black;
+  }
+  
+  /* Red player marker */
+  #p1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: rgb(236, 82, 82);
+    position: relative;
+    border: 3px solid black;
+    top: 0px;
+    left: -62px;
+    z-index: 2;
+    transition: all linear 0.5s;
+  }
+  
+  /* Background image for board */
+  img {
+    position: relative;
+    top: -615px;
+    left: 8px;
+    margin: 0;
+    width: 615px;
+    height: 615px;
+  }
+  
+  /* Dice container */
+  #diceCont {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 200px;
+    left: 120px;
+    font-size: 2rem;
+    z-index: 99;
+  }
+  
+  /* Dice button */
+  #diceBtn {
+    z-index: 99;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgb(75, 140, 197);
+    border-radius: 5px;
+    width: 200px;
+  }
+
+  #dice {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 4px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 60px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+#dice:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#dice.one:before {
+    top: 24px;
+    left: 24px;
+}
+
+#dice.two:before {
+    top: 8px;
+    left: 8px;
+}
+
+#dice.two:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#dice.three:before {
+    top: 8px;
+    left: 8px;
+}
+
+#dice.three:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#dice.three .center {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#dice.four .one, #dice.four .two {
+    content: '';
+    position: absolute;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#dice.five .one, #dice.five .two {
+    content: '';
+    position: absolute;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#dice.five .three {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#dice.six {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+#dice.six div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+  
+  /* Responsive styles */
+  @media (max-width: 1250px) {
+    #diceCont {
+      display: flex;
+      top: 92vh;
+      left: 36vw;
+    }
+    #diceBtn {
+      width: 200px;
+      margin-left: 20px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    #diceCont {
+      display: flex;
+      top: 99vh;
+      left: 10vw;
+    }
+    #diceBtn {
+      width: 100px;
+      margin-left: 20px;
+    }
+  }
+  
